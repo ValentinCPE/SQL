@@ -1,0 +1,13 @@
+CREATE TABLE jobs AS SELECT * FROM HR.JOBS;
+
+CREATE OR REPLACE PROCEDURE AJOUT_JOB(IDE IN varchar2, TITLE IN varchar2) IS
+BEGIN
+  insert into JOBS values(IDE,TITLE,0,0);
+  commit;
+END;
+/
+
+BEGIN
+AJOUT_JOB('VR_AMIN','titrejob');
+END;
+
